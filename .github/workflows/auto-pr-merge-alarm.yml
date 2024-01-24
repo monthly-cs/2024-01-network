@@ -21,3 +21,5 @@ jobs:
 
         run: |
           echo "hello"
+          
+          mail -s "GitHub Action 성공" workstation19961002@gmail.com
