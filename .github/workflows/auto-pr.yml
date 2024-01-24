@@ -19,8 +19,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
 
         run: |
-          git fetch origin main:main
+          baseBranch=main
+          headBranch=$(git rev-parse --abbrev-ref HEAD)
 
-          git log main..dev
+          git fetch origin ${baseBranch}:${baseBranch}
+          git log ${baseBranch}..${headBranch}
 
-          python ./scripts/auto-pr.py
+          python ./scripts/auto-pr.py ${baseBranch} ${headBranch}

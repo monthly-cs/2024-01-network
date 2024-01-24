@@ -78,11 +78,12 @@ def getPullRequestTemplate(
     print("✅✅✅")
     print(out)
 
-    pullRequestBody = f"""[Title] Change this title
-[Contributer] {','.join(commiterList)}
-[Content]
+    pullRequestBody = f"""
+[제목] [가제] 변경 필요
+[기여자] {','.join(commiterList)}
+[내용]
 
-| Timestamp | Commit-Id | Commit-Msg | Commit-User | Committer |
+| 시간 | 커밋 ID | 커밋 제목 | 기여자 이름 | 기여자 Email |
 | --------- | --------- | ---------- | ----------- | --------- |"""
     commitList = out.split('\n')
     for commit in commitList:
@@ -110,7 +111,7 @@ def getPullRequestTemplate(
     labelList = list(set(labelList))
 
     githubPrTemplate: GitHubPrTemplate = {
-        'title': 'Sample Title',
+        'title': '[가제] 변경 필요',
         'body': pullRequestBody,
         'labelList': labelList,
         'assigneeList': commiterList
@@ -170,7 +171,7 @@ def updatePullRequest(
     splitedCommand = [
         'gh', 'pr', 'edit', str(pr['number']),
         '--title', str(title),
-        '--body', f'"{body}"',
+        '--body', f'{body}',
     ]
 
     TK = ','
@@ -225,21 +226,32 @@ def createPullRequest(
     print(isSuccess, outStr, errStr)
 
 
-base = 'main'
-head = 'dev'
-# fetchGitHub(base=base,
-#             head=head)
-hasPr, prList = isExistsPrList(base=base,
-                               head=head,
-                               jsonFormat='number,title')
-requestTemplate = getPullRequestTemplate(base=base,
-                                         head=head)
+if __name__ == '__main__':
+    import sys
+    
+    if len(sys.argv) == 1:
+        raise ValueError(f'python ./scripts/{sys.argv[0]} <base> <head>에서 base가 누락되었습니다.')
+    if len(sys.argv) == 2:
+        raise ValueError(f'python ./scripts/{sys.argv[0]} <base> <head>에서 head가 누락되었습니다.')
+    
+    base = sys.argv[1]
+    head = sys.argv[2]
+    
+    base = base
+    head = head
+    # fetchGitHub(base=base,
+    #             head=head)
+    hasPr, prList = isExistsPrList(base=base,
+                                head=head,
+                                jsonFormat='number,title')
+    requestTemplate = getPullRequestTemplate(base=base,
+                                            head=head)
 
-if hasPr:
-    updatePullRequest(prList=prList,
-                      githubPrTemplate=requestTemplate)
+    if hasPr:
+        updatePullRequest(prList=prList,
+                        githubPrTemplate=requestTemplate)
 
-else:
-    createPullRequest(base=base,
-                      head=head,
-                      githubPrTemplate=requestTemplate)
+    else:
+        createPullRequest(base=base,
+                        head=head,
+                        githubPrTemplate=requestTemplate)
