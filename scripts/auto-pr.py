@@ -255,3 +255,4 @@ if __name__ == '__main__':
         createPullRequest(base=base,
                         head=head,
                         githubPrTemplate=requestTemplate)
+        
