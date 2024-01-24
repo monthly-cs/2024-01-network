@@ -84,8 +84,7 @@ def getPullRequestTemplate(
 [내용]
 
 | 시간 | 커밋 ID | 커밋 제목 | 기여자 이름 | 기여자 Email |
-| --------- | --------- | ---------- | ----------- | --------- |
-"""
+| --------- | --------- | ---------- | ----------- | --------- |"""
     commitList = out.split('\n')
     for commit in commitList:
         pullRequestBody += '\n' + commit[1:-1]
