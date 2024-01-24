@@ -227,21 +227,32 @@ def createPullRequest(
     print(isSuccess, outStr, errStr)
 
 
-base = 'main'
-head = 'dev'
-# fetchGitHub(base=base,
-#             head=head)
-hasPr, prList = isExistsPrList(base=base,
-                               head=head,
-                               jsonFormat='number,title')
-requestTemplate = getPullRequestTemplate(base=base,
-                                         head=head)
+if __name__ == '__main__':
+    import sys
+    
+    if len(sys.argv) == 1:
+        raise ValueError(f'python ./scripts/{sys.argv[0]} <base> <head>에서 base가 누락되었습니다.')
+    if len(sys.argv) == 2:
+        raise ValueError(f'python ./scripts/{sys.argv[0]} <base> <head>에서 head가 누락되었습니다.')
+    
+    base = sys.argv[1]
+    head = sys.argv[2]
+    
+    base = base
+    head = head
+    # fetchGitHub(base=base,
+    #             head=head)
+    hasPr, prList = isExistsPrList(base=base,
+                                head=head,
+                                jsonFormat='number,title')
+    requestTemplate = getPullRequestTemplate(base=base,
+                                            head=head)
 
-if hasPr:
-    updatePullRequest(prList=prList,
-                      githubPrTemplate=requestTemplate)
+    if hasPr:
+        updatePullRequest(prList=prList,
+                        githubPrTemplate=requestTemplate)
 
-else:
-    createPullRequest(base=base,
-                      head=head,
-                      githubPrTemplate=requestTemplate)
+    else:
+        createPullRequest(base=base,
+                        head=head,
+                        githubPrTemplate=requestTemplate)
