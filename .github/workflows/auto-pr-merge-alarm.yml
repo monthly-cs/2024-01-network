@@ -1,7 +1,8 @@
-name: PR 생성 자동화
+name: PR 병합 알람
 
 on:
   pull_request:
+    types: ["closed"]
     branches-ignore: ["main", "dev"]
 
 jobs:
