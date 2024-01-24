@@ -171,7 +171,7 @@ def updatePullRequest(
     splitedCommand = [
         'gh', 'pr', 'edit', str(pr['number']),
         '--title', str(title),
-        '--body', f'"{body}"',
+        '--body', f'{body}',
     ]
 
     TK = ','
