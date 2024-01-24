@@ -2,7 +2,7 @@ name: PR 생성 자동화
 
 on:
   push:
-    branches: ["dev"]w
+    branches-ignore: ["main", "dev"]
 
 jobs:
   create-pr:
