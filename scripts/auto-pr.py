@@ -78,12 +78,14 @@ def getPullRequestTemplate(
     print("✅✅✅")
     print(out)
 
-    pullRequestBody = f"""[Title] Change this title
-[Contributer] {','.join(commiterList)}
-[Content]
+    pullRequestBody = f"""
+[제목] Change this title
+[기여자] {','.join(commiterList)}
+[내용]
 
-| Timestamp | Commit-Id | Commit-Msg | Commit-User | Committer |
-| --------- | --------- | ---------- | ----------- | --------- |"""
+| 시간 | 커밋 ID | 커밋 제목 | 기여자 이름 | 기여자 Email |
+| --------- | --------- | ---------- | ----------- | --------- |
+"""
     commitList = out.split('\n')
     for commit in commitList:
         pullRequestBody += '\n' + commit[1:-1]
