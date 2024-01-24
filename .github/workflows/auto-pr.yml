@@ -1,0 +1,26 @@
+name: PR 생성 자동화
+
+on:
+  push:
+    branches: ["dev"]w
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
+      - name: Create Dynamic Pull Request
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+        run: |
+          git fetch origin main:main
+
+          git log main..dev
+
+          python ./scripts/auto-pr.py
