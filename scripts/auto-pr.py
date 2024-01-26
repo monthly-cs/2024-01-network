@@ -79,7 +79,7 @@ def getPullRequestTemplate(
     print(out)
 
     pullRequestBody = f"""
-[제목] [가제] 변경 필요
+[제목] N월 N주차 회고
 [기여자] {','.join(commiterList)}
 [내용]
 
@@ -111,7 +111,7 @@ def getPullRequestTemplate(
     labelList = list(set(labelList))
 
     githubPrTemplate: GitHubPrTemplate = {
-        'title': '[가제] 변경 필요',
+        'title': 'N월 N주차 회고',
         'body': pullRequestBody,
         'labelList': labelList,
         'assigneeList': commiterList
