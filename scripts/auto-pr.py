@@ -180,10 +180,10 @@ def updatePullRequest(
         label = TK.join(labelList)
         splitedCommand.extend(['--add-label', label])
 
-    hasAssignee = len(assigneeList) > 0
-    if hasAssignee:
-        assignee = TK.join(assigneeList)
-        splitedCommand.extend(['--add-assignee', assignee])
+    # hasAssignee = len(assigneeList) > 0
+    # if hasAssignee:
+    #     assignee = TK.join(assigneeList)
+    #     splitedCommand.extend(['--add-assignee', assignee])
 
     isSuccess, outStr, errStr = splitRunner(splitedCommand=splitedCommand)
     print('outStr : ', outStr)
