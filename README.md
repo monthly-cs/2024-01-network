@@ -1,7 +1,6 @@
 # 2024-01
 
 [![PR 생성 자동화](https://github.com/monthly-cs/2024-01-network/actions/workflows/auto-pr.yml/badge.svg)](https://github.com/monthly-cs/2024-01-network/actions/workflows/auto-pr.yml)
-[![PR 병합 알람](https://github.com/monthly-cs/2024-01-network/actions/workflows/auto-pr-merge-alarm.yml/badge.svg)](https://github.com/monthly-cs/2024-01-network/actions/workflows/auto-pr-merge-alarm.yml)
 
 월간 CS는 **매일 책을 읽는 팀**입니다.
 
