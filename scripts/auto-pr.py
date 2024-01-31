@@ -79,7 +79,7 @@ def getPullRequestTemplate(
     print(out)
 
     pullRequestBody = f"""
-[제목] [가제] 변경 필요
+[제목] N월 N주차 회고
 [기여자] {','.join(commiterList)}
 [내용]
 
@@ -111,7 +111,7 @@ def getPullRequestTemplate(
     labelList = list(set(labelList))
 
     githubPrTemplate: GitHubPrTemplate = {
-        'title': '[가제] 변경 필요',
+        'title': 'N월 N주차 회고',
         'body': pullRequestBody,
         'labelList': labelList,
         'assigneeList': commiterList
@@ -183,7 +183,7 @@ def updatePullRequest(
     hasAssignee = len(assigneeList) > 0
     if hasAssignee:
         assignee = TK.join(assigneeList)
-        splitedCommand.extend(['--add-assignee', 'unchaptered'])
+        splitedCommand.extend(['--add-assignee', assignee])
 
     isSuccess, outStr, errStr = splitRunner(splitedCommand=splitedCommand)
     print('outStr : ', outStr)
@@ -228,31 +228,30 @@ def createPullRequest(
 
 if __name__ == '__main__':
     import sys
-    
+
     if len(sys.argv) == 1:
-        raise ValueError(f'python ./scripts/{sys.argv[0]} <base> <head>에서 base가 누락되었습니다.')
+        raise ValueError(
+            f'python ./scripts/{sys.argv[0]} <base> <head>에서 base가 누락되었습니다.')
     if len(sys.argv) == 2:
-        raise ValueError(f'python ./scripts/{sys.argv[0]} <base> <head>에서 head가 누락되었습니다.')
-    
+        raise ValueError(
+            f'python ./scripts/{sys.argv[0]} <base> <head>에서 head가 누락되었습니다.')
+
     base = sys.argv[1]
     head = sys.argv[2]
-    
-    base = base
-    head = head
+
     # fetchGitHub(base=base,
     #             head=head)
     hasPr, prList = isExistsPrList(base=base,
-                                head=head,
-                                jsonFormat='number,title')
+                                   head=head,
+                                   jsonFormat='number,title')
     requestTemplate = getPullRequestTemplate(base=base,
-                                            head=head)
+                                             head=head)
 
     if hasPr:
         updatePullRequest(prList=prList,
-                        githubPrTemplate=requestTemplate)
+                          githubPrTemplate=requestTemplate)
 
     else:
         createPullRequest(base=base,
-                        head=head,
-                        githubPrTemplate=requestTemplate)
-        
+                          head=head,
+                          githubPrTemplate=requestTemplate)
