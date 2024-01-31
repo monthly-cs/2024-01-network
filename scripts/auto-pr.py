@@ -217,10 +217,10 @@ def createPullRequest(
         label = TK.join(labelList)
         splitedCommand.extend(['--label', label])
 
-    hasAssignee = len(assigneeList) > 0
-    if hasAssignee:
-        assignee = TK.join(assigneeList)
-        splitedCommand.extend(['--assignee', assignee])
+    # hasAssignee = len(assigneeList) > 0
+    # if hasAssignee:
+    #     assignee = TK.join(assigneeList)
+    #     splitedCommand.extend(['--assignee', assignee])
 
     isSuccess, outStr, errStr = splitRunner(splitedCommand=splitedCommand)
     print(isSuccess, outStr, errStr)
