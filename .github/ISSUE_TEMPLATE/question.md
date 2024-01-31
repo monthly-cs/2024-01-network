@@ -1,5 +1,5 @@
 ---
-name: 질문 양
+name: 질문 양식
 about: 질문 내용
 title: '[X장] XXp 질문'
 labels: 'documentation'
