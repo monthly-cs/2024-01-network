@@ -28,7 +28,7 @@
 | [@refresh88](https://github.com/refresh88) | |
 | [@kafkaaaa](https://github.com/kafkaaaa) | |
 | [@minenam](https://github.com/minenam) | |
-| [@jaeeunlee322](https://github.com/jaeeunlee322) |  |
+| [@jaeeunlee322](https://github.com/jaeeunlee322) | je6752@gmail.com |
 
 ## 2. Group Rule
 
