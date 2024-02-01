@@ -25,4 +25,4 @@ jobs:
           git fetch origin ${baseBranch}:${baseBranch}
           git log ${baseBranch}..${headBranch}
 
-          python ./scripts/auto-pr.py ${baseBranch} ${headBranch}
+          python ./.github/scripts/auto-pr.py ${baseBranch} ${headBranch}
