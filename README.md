@@ -81,3 +81,4 @@ PR은 N월 N주차에 형태에 맞춰서 작성해주세요!
 
 <img src="./images/pr_search_sample_2.png"
         style="width: 800px;">
+        
