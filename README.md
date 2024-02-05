@@ -6,29 +6,29 @@
 
 하루 한 장이라도 책을 읽고 인증샷과 DIL을 작성해서 올려주세요.
 
-- 책 : IT 엔지니어를 위한 네트워크 입문
-- 기간 : 2024-01 ~
+-   책 : IT 엔지니어를 위한 네트워크 입문
+-   기간 : 2024-01 ~
 
 <image src="./images/book_cover.jpg"
         style="width: 200px; margin-left: 22px;">
 
 ## 1. Contributior
 
-| Name | Contact |
-| ---- | ------- |
-| [@unchaptered](https://github.com/unchaptered) | workstation19961002@gmail.com |
-| [@playhuck](https://github.com/playhuck) | wngur89@gmail.com |
-| [@smilejakdu](https://github.com/smilejakdu) | |
-| [@aksmf1442](https://github.com/aksmf1442) | |
-| [@brightchul](https://github.com/brightchul) | |
-| [limsangkyu0219]() | |
-| [limseongdev]() | |
-| [@jiwon615](https://github.com/jiwon615) | |
-| [@sonmansu](https://github.com/sonmansu) | |
-| [@refresh88](https://github.com/refresh88) | |
-| [@kafkaaaa](https://github.com/kafkaaaa) | |
-| [@minenam](https://github.com/minenam) | |
-| [@jaeeunlee322](https://github.com/jaeeunlee322) |  |
+| Name                                             | Contact                       |
+| ------------------------------------------------ | ----------------------------- |
+| [@unchaptered](https://github.com/unchaptered)   | workstation19961002@gmail.com |
+| [@playhuck](https://github.com/playhuck)         | wngur89@gmail.com             |
+| [@smilejakdu](https://github.com/smilejakdu)     |                               |
+| [@aksmf1442](https://github.com/aksmf1442)       |                               |
+| [@brightchul](https://github.com/brightchul)     |                               |
+| [@sk-lim19f](https://github.com/sk-lim19f)       |                               |
+| [limseongdev]()                                  |                               |
+| [@jiwon615](https://github.com/jiwon615)         |                               |
+| [@sonmansu](https://github.com/sonmansu)         |                               |
+| [@refresh88](https://github.com/refresh88)       |                               |
+| [@kafkaaaa](https://github.com/kafkaaaa)         |                               |
+| [@minenam](https://github.com/minenam)           |                               |
+| [@jaeeunlee322](https://github.com/jaeeunlee322) |                               |
 
 ## 2. Group Rule
 
@@ -36,16 +36,14 @@
 
 이에 편의를 위한 몇 가지 간단한 룰이 있어요!
 
-- [2.a. 각자 branch 만들기](./README.md#2a-각자-branch-만들기-😊)
-- [2.b. PR 병합 전에 제목 변경하기](./README.md#2b-pr-병합-전에-제목-변경하기-😊)
+-   [2.a. 각자 branch 만들기](./README.md#2a-각자-branch-만들기-😊)
+-   [2.b. PR 병합 전에 제목 변경하기](./README.md#2b-pr-병합-전에-제목-변경하기-😊)
 
 ### 2.a. 각자 branch 만들기 😊
 
 1. 각자 main branch에서 분기해서 <개인 branch>를 만들어주세요!
-2. docs/ 경로에 <개인 branch 명>에 맞는 폴더를 만들어주세요.
-        - docs/unchaptered 등과 같이
-3. 파일명은 YYYY-MM-DD 형태로 작성하시되, 나머지는 개인이 편하게 작성해주시면 됩니다!
-        - docs/unchaptered/2024-02-01_회고
+2. docs/ 경로에 <개인 branch 명>에 맞는 폴더를 만들어주세요. - docs/unchaptered 등과 같이
+3. 파일명은 YYYY-MM-DD 형태로 작성하시되, 나머지는 개인이 편하게 작성해주시면 됩니다! - docs/unchaptered/2024-02-01\_회고
 
 ### 2.b. PR 병합 전에 제목 변경하기 😊
 
@@ -81,4 +79,3 @@ PR은 N월 N주차에 형태에 맞춰서 작성해주세요!
 
 <img src="./images/pr_search_sample_2.png"
         style="width: 800px;">
-        
