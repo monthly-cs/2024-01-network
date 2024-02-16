@@ -180,10 +180,10 @@ def updatePullRequest(
         label = TK.join(labelList)
         splitedCommand.extend(['--add-label', label])
 
-    # hasAssignee = len(assigneeList) > 0
-    # if hasAssignee:
-    #     assignee = TK.join(assigneeList)
-    #     splitedCommand.extend(['--add-assignee', assignee])
+    hasAssignee = len(assigneeList) > 0
+    if hasAssignee:
+        assignee = TK.join(assigneeList)
+        splitedCommand.extend(['--add-assignee', 'unchaptered'])
 
     isSuccess, outStr, errStr = splitRunner(splitedCommand=splitedCommand)
     print('outStr : ', outStr)
@@ -217,10 +217,10 @@ def createPullRequest(
         label = TK.join(labelList)
         splitedCommand.extend(['--label', label])
 
-    # hasAssignee = len(assigneeList) > 0
-    # if hasAssignee:
-    #     assignee = TK.join(assigneeList)
-    #     splitedCommand.extend(['--assignee', assignee])
+    hasAssignee = len(assigneeList) > 0
+    if hasAssignee:
+        assignee = TK.join(assigneeList)
+        splitedCommand.extend(['--assignee', assignee])
 
     isSuccess, outStr, errStr = splitRunner(splitedCommand=splitedCommand)
     print(isSuccess, outStr, errStr)
@@ -228,30 +228,31 @@ def createPullRequest(
 
 if __name__ == '__main__':
     import sys
-
+    
     if len(sys.argv) == 1:
-        raise ValueError(
-            f'python ./scripts/{sys.argv[0]} <base> <head>에서 base가 누락되었습니다.')
+        raise ValueError(f'python ./scripts/{sys.argv[0]} <base> <head>에서 base가 누락되었습니다.')
     if len(sys.argv) == 2:
-        raise ValueError(
-            f'python ./scripts/{sys.argv[0]} <base> <head>에서 head가 누락되었습니다.')
-
+        raise ValueError(f'python ./scripts/{sys.argv[0]} <base> <head>에서 head가 누락되었습니다.')
+    
     base = sys.argv[1]
     head = sys.argv[2]
-
+    
+    base = base
+    head = head
     # fetchGitHub(base=base,
     #             head=head)
     hasPr, prList = isExistsPrList(base=base,
-                                   head=head,
-                                   jsonFormat='number,title')
+                                head=head,
+                                jsonFormat='number,title')
     requestTemplate = getPullRequestTemplate(base=base,
-                                             head=head)
+                                            head=head)
 
     if hasPr:
         updatePullRequest(prList=prList,
-                          githubPrTemplate=requestTemplate)
+                        githubPrTemplate=requestTemplate)
 
     else:
         createPullRequest(base=base,
-                          head=head,
-                          githubPrTemplate=requestTemplate)
+                        head=head,
+                        githubPrTemplate=requestTemplate)
+        
